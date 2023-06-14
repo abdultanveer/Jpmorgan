@@ -20,9 +20,11 @@ class MainActivity : AppCompatActivity() {
        // Intent myIntent = new Intent();
 
         var myIntent = Intent(this,HomeActivity::class.java)
-        startActivity(myIntent)
-       /* var name: String = etName.text.toString()
+       var name: String = etName.text.toString()
 
-        Toast.makeText(this,name,Toast.LENGTH_SHORT).show();*/
+        myIntent.putExtra("jpmkey",name)   //extras -- java map
+        startActivity(myIntent)
+
+       // Toast.makeText(this,name,Toast.LENGTH_SHORT).show();*/
     }
 }
