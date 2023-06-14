@@ -20,6 +20,34 @@ class MainActivity : AppCompatActivity() {
         Log.i(TAG,"im in oncreate")
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.i(TAG,"im in start")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(TAG,"im in start -- save the state")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(TAG,"im in resume --restore state")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(TAG,"im in stop")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(TAG,"im in destroy")
+
+    }
+
     //context --- history
     fun showToast(view: View) {
        // Intent myIntent = new Intent();
