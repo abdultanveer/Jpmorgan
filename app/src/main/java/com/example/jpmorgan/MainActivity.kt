@@ -1,6 +1,7 @@
 package com.example.jpmorgan
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,5 +27,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(myIntent)
 
        // Toast.makeText(this,name,Toast.LENGTH_SHORT).show();*/
+    }
+
+    fun handleClick(view: View) {
+        var dialIntent : Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:98765432"))
+        startActivity(dialIntent)
     }
 }
