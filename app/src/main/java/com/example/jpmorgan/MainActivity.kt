@@ -1,5 +1,6 @@
 package com.example.jpmorgan
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,8 +17,12 @@ class MainActivity : AppCompatActivity() {
 
     //context --- history
     fun showToast(view: View) {
-        var name: String = etName.text.toString()
+       // Intent myIntent = new Intent();
 
-        Toast.makeText(this,name,Toast.LENGTH_SHORT).show();
+        var myIntent = Intent(this,HomeActivity::class.java)
+        startActivity(myIntent)
+       /* var name: String = etName.text.toString()
+
+        Toast.makeText(this,name,Toast.LENGTH_SHORT).show();*/
     }
 }
