@@ -35,11 +35,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun handleClick(view: View) {
-
+        add(10,20)
         Log.w(TAG,"launching dialer")
         var dialIntent : Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:98765432"))
         startActivity(dialIntent)
-        throw NullPointerException("crashing my app")
+       // throw NullPointerException("crashing my app")
+    }
+
+    private fun add(i: Int, i1: Int): Int {
+        var c = i * i1;
+        c * 20;
+
+        c++;
+        return c;
 
     }
 }

@@ -3,6 +3,7 @@ package com.example.jpmorgan;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "im in oncreate of home activity");
         setContentView(R.layout.activity_home);
         //setContentView -- inflating the layout file activity_home
         etContact = findViewById(R.id.etContact);  //initialization -- taking handle
