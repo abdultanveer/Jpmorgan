@@ -35,8 +35,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun handleClick(view: View) {
+
         Log.w(TAG,"launching dialer")
         var dialIntent : Intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:98765432"))
         startActivity(dialIntent)
+        throw NullPointerException("crashing my app")
+
     }
 }
