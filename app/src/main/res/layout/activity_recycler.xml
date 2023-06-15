@@ -8,7 +8,6 @@
 
     <ListView
         android:id="@+id/countrieslistview"
-        android:entries="@array/countries"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="1dp"
