@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="jpm_logo_text_style">
+        <item name="android:textColor">#def123</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+    <style name="other" parent="jpm_logo_text_style">
+        <item name="android:textColor">#aaa999</item>
+    </style>
+</resources>
+
+
+    <!--android:textColor="#def123"
+    android:textSize="25sp"
+    android:textStyle="bold|italic"-->
