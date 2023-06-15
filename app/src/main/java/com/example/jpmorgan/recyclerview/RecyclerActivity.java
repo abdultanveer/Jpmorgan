@@ -33,6 +33,7 @@ public class RecyclerActivity extends AppCompatActivity
                 android.R.layout.simple_list_item_1, //layout is of each
                 android.R.id.text1, //textview of the above layout
                 languages);
+        LangAdapter langAdapter = new LangAdapter(languages);
 
        // countListView.setOnItemClickListener(this);
 
