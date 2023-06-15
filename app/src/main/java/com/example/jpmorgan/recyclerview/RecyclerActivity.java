@@ -10,9 +10,17 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.jpmorgan.R;
+import com.example.jpmorgan.roomdb.AppDatabase;
+import com.example.jpmorgan.roomdb.AppExecutors;
+import com.example.jpmorgan.roomdb.Person;
+
+import java.util.List;
 
 public class RecyclerActivity extends AppCompatActivity
         implements AdapterView.OnItemClickListener {
+    private AppDatabase mDb;
+    List<Person> personList;
+
     String[] languages = {"english","urdu","kannada","hindi","arabic",
             "english","urdu","kannada","hindi","arabic",
             "english","urdu","kannada","hindi","arabic",
@@ -30,15 +38,26 @@ public class RecyclerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
         countRecyView = findViewById(R.id.countrieslistview);
+        countRecyView.setLayoutManager(new LinearLayoutManager(this));
+
+        mDb = AppDatabase.getInstance(this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        LangAdapter langAdapter = new LangAdapter(languages);
-        countRecyView.setLayoutManager(new LinearLayoutManager(this));
-        countRecyView.setAdapter(langAdapter);
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+              personList =  mDb.personDao().loadAllPersons();
+              LangAdapter mAdapter = new LangAdapter(personList);
+              countRecyView.setAdapter(mAdapter);
+            }
+        });
+
+       // LangAdapter langAdapter = new LangAdapter(languages);
+        //countRecyView.setAdapter(langAdapter);
 
        // countListView.setOnItemClickListener(this);
 

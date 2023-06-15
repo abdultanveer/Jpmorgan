@@ -1,5 +1,6 @@
 package com.example.jpmorgan.roomdb;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -31,5 +32,11 @@ public class Person {
         this.number = number;
         this.pincode = pincode;
         this.city = city;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

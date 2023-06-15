@@ -10,14 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jpmorgan.R;
+import com.example.jpmorgan.roomdb.Person;
+
+import java.util.List;
 
 public class LangAdapter extends RecyclerView.Adapter<LangAdapter.LanViewHolder> {
 public static String TAG = LangAdapter.class.getSimpleName();
 
-    String[] langs;
-
-    public LangAdapter(String[] langs) {
+   // String[] langs;
+   List<Person> personList;
+   /* public LangAdapter(String[] langs) {
         this.langs = langs;
+    }*/
+
+    public LangAdapter(List<Person> personList) {
+        this.personList = personList;
     }
 
     @NonNull
@@ -30,16 +37,17 @@ public static String TAG = LangAdapter.class.getSimpleName();
 
     @Override
     public void onBindViewHolder(@NonNull LanViewHolder holder, int position) {
-        Log.i(TAG,"kusum is writing"+langs[position]);
-        holder.rowTv.setText(langs[position]);
+        Log.i(TAG,"kusum is writing"+ personList.get(position));
+                //langs[position]);
+        holder.rowTv.setText(personList.get(position).toString());
 
     }
 
     @Override //manas keeps the count of no of items in the array
     public int getItemCount() {
-        Log.i(TAG,"sandeep say the count is--"+langs.length);
+        Log.i(TAG,"sandeep say the count is--"+personList.size());
 
-        return langs.length;
+        return personList.size();
     }
 
     class LanViewHolder extends RecyclerView.ViewHolder {

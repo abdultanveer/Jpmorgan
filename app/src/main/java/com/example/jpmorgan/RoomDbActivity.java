@@ -25,6 +25,7 @@ public class RoomDbActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_db);
         initViews();
+
         mDb = AppDatabase.getInstance(this);
     }
 
