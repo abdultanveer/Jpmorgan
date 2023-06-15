@@ -22,12 +22,13 @@ public class HomeActivity extends AppCompatActivity {
         etContact = findViewById(R.id.etContact);  //initialization -- taking handle
         tvResult = findViewById(R.id.tvResult);
 
-        String name = getIntent().getExtras().getString("jpmkey");
-        tvResult.setText(name);
+      //  String name = getIntent().getExtras().getString("jpmkey");
     }
 
     public void showContact(View view) {
         String contact  = etContact.getText().toString();
-        Toast.makeText(this, contact, Toast.LENGTH_SHORT).show();
+        tvResult.setText(contact);
+
+        //Toast.makeText(this, contact, Toast.LENGTH_SHORT).show();
     }
 }
