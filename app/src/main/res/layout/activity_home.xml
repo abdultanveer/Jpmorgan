@@ -14,7 +14,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="61dp"
         android:ems="10"
-        android:hint="enter contact"
+        android:hint="@string/enter_con"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         android:layout_marginStart="41dp"
         android:layout_marginTop="166dp"
         android:onClick="showContact"
-        android:text="show"
+        android:text="@string/show"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginTop="54dp"
-        android:text="TextView"
+        android:text="@string/result"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnContact" />
 </androidx.constraintlayout.widget.ConstraintLayout>
