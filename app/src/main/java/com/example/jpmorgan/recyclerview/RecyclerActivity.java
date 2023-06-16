@@ -1,6 +1,8 @@
 package com.example.jpmorgan.recyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviderGetKt;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.jpmorgan.R;
+import com.example.jpmorgan.RecyclerViewModel;
 import com.example.jpmorgan.roomdb.AppDatabase;
 import com.example.jpmorgan.roomdb.AppExecutors;
 import com.example.jpmorgan.roomdb.Person;
@@ -41,6 +44,7 @@ public class RecyclerActivity extends AppCompatActivity
         countRecyView.setLayoutManager(new LinearLayoutManager(this));
 
         mDb = AppDatabase.getInstance(this);
+
     }
 
     @Override
